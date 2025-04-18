@@ -1,52 +1,196 @@
 {
-    "faq": [
-        {
-            "question": "¿Cuáles son las normas del crucero?",
-            "answer": "Las normas del crucero incluyen el respeto a los horarios de comida, el uso de ropa adecuada en las áreas comunes y la prohibición de fumar en ciertas zonas."
-        },
-        {
-            "question": "¿Qué actividades se ofrecen a bordo?",
-            "answer": "A bordo se ofrecen diversas actividades como clases de baile, talleres de cocina, espectáculos en vivo y excursiones en tierra."
-        },
-        {
-            "question": "¿Cómo puedo hacer una reserva?",
-            "answer": "Puedes hacer una reserva a través de nuestro sitio web o contactando a nuestro servicio de atención al cliente."
-        },
-        {
-            "question": "¿Qué documentos necesito para embarcar?",
-            "answer": "Necesitarás tu pasaporte, el billete del crucero y cualquier otro documento requerido por las autoridades del puerto."
-        },
-        {
-            "question": "¿Hay opciones de comida para dietas especiales?",
-            "answer": "Sí, ofrecemos opciones de comida para dietas especiales, incluyendo vegetarianas, veganas y sin gluten. Por favor, infórmanos con antelación."
-        },
-        {
-            "question": "¿Qué debo hacer en caso de emergencia?",
-            "answer": "En caso de emergencia, sigue las instrucciones del personal del crucero y dirígete a los puntos de reunión designados."
-        },
-        {
-            "question": "¿Puedo llevar mascotas a bordo?",
-            "answer": "No se permiten mascotas a bordo, excepto en casos de animales de servicio."
-        },
-        {
-            "question": "¿Cómo puedo contactar al servicio de atención al cliente?",
-            "answer": "Puedes contactar al servicio de atención al cliente a través de nuestro número de teléfono o correo electrónico que se encuentra en nuestra página web."
-        },
-        {
-            "question": "¿Quiénes son los participantes del proyecto?",
-            "answer": "El proyecto cuenta con la participación de investigadores de la Universidad Nacional, profesionales en ingeniería electromagnética y especialistas en machine learning."
-        },
-        {
-            "question": "¿Cuáles son los objetivos del proyecto?",
-            "answer": "El objetivo general del proyecto es desarrollar un modelo predictivo para la exposición electromagnética utilizando técnicas de machine learning. Los objetivos específicos incluyen la recolección de datos, implementación de algoritmos y validación de resultados."
-        },
-        {
-            "question": "¿Cuáles son las conclusiones del estudio?",
-            "answer": "Las conclusiones principales del estudio muestran que los modelos de machine learning pueden predecir con precisión los niveles de exposición electromagnética, siendo Random Forest el algoritmo con mejor desempeño."
-        },
-        {
-            "question": "¿Qué beneficios tiene el proyecto?",
-            "answer": "Los beneficios del proyecto incluyen mejor comprensión de la exposición electromagnética, herramientas predictivas para la planificación urbana y metodologías innovadoras para estudios similares."
-        }
-    ]
+  "faq": [
+    {
+      "question": "¿Cuál es el título del proyecto?",
+      "answer": "Identificación y predicción de Niveles de Exposición Electromagnética en Departamentos de Colombia."
+    },
+    {
+      "question": "¿Cuáles son los objetivos del proyecto?",
+      "answer": "El objetivo general es ilustrar las primeras fases del ciclo de vida de un modelo de Machine Learning aplicado a la predicción de niveles de exposición electromagnética en municipios de Colombia."
+    },
+    {
+      "question": "¿Qué es la exposición electromagnética?",
+      "answer": "Es la exposición a campos electromagnéticos generados por dispositivos electrónicos, redes de telecomunicaciones y otras fuentes, que pueden tener impacto en la salud y el medio ambiente."
+    },
+    {
+      "question": "¿Qué modelos de Machine Learning se usaron?",
+      "answer": "Se usaron modelos como Regresión Lineal, Árboles de Decisión, Random Forest y XGBoost, optimizados con técnicas como GridSearchCV."
+    },
+    {
+      "question": "¿Dónde puedo encontrar más información sobre los datos utilizados?",
+      "answer": "Los datos provienen de fuentes abiertas del gobierno colombiano, disponibles en https://www.datos.gov.co."
+    },
+    {
+      "question": "¿Cuál es el planteamiento del problema abordado?",
+      "answer": "El problema radica en la falta de un modelo predictivo eficiente que permita analizar y anticipar los niveles de exposición a campos electromagnéticos en función de variables ambientales, geográficas y temporales."
+    },
+    {
+      "question": "¿Cuáles son los beneficios de este proyecto?",
+      "answer": "Optimización del análisis de datos, mejora en la toma de decisiones, accesibilidad a la información, reducción de costos y aplicación de tecnología en la gestión ambiental."
+    },
+    {
+      "question": "¿Qué conclusiones se obtuvieron del proyecto?",
+      "answer": "Se demostró que es posible predecir la fluctuación de los niveles de exposición electromagnética en Colombia utilizando técnicas de Machine Learning. El modelo XGBoost optimizado fue el más destacado, y se recomienda ampliar la base de datos para mejorar la capacidad predictiva."
+    },
+    {
+      "question": "¿Quiénes participaron en el proyecto?",
+      "answer": "Participaron Andres Mauricio Ardila, Claudia Ines Giraldo, Marisela Lotero Zuluaga y como ejecutor técnico, la Ing. Darly Mildred Delgado."
+    },
+    {
+      "question": "¿Cuáles son los objetivos específicos del proyecto?",
+      "answer": "Configurar un entorno de trabajo eficiente, realizar un análisis exploratorio de datos, estructurar y limpiar los datos, desarrollar y evaluar modelos de Machine Learning, y diseñar una herramienta interactiva para presentar resultados."
+    },
+    {
+      "question": "¿Qué modelos de Machine Learning se usaron en el proyecto?",
+      "answer": "Se usaron Regresión Lineal, Árboles de Decisión, Random Forest y XGBoost, optimizados con técnicas como GridSearchCV."
+    },
+    {
+      "question": "¿Cómo se evaluaron los modelos de Machine Learning?",
+      "answer": "Se utilizaron métricas como el Error Cuadrático Medio (MSE) y el Coeficiente de Determinación (R²). El modelo XGBoost optimizado obtuvo un R² de 0.9158 en entrenamiento y 0.7845 en prueba, destacándose como el mejor modelo."
+    },
+    {
+      "question": "¿Cuál es la pregunta principal del proyecto?",
+      "answer": "¿Es posible predecir la fluctuación de los niveles de exposición electromagnética en diferentes regiones de Colombia utilizando técnicas de Machine Learning?"
+    },
+    {
+      "question": "¿Qué variables se consideraron en el proyecto?",
+      "answer": "Se consideraron variables ambientales, geográficas y temporales, además de datos abiertos sobre fuentes emisoras de radiación electromagnética."
+    },
+    {
+      "question": "¿Qué información técnica se utilizó en el proyecto?",
+      "answer": "Se aplicaron técnicas como codificación de variables categóricas (OneHotEncoder), normalización, escalado, análisis univariado, bivariado y multivariado, y reducción de dimensionalidad (PCA)."
+    },
+    {
+      "question": "¿Cuál es el título del proyecto?",
+      "answer": "Predicción de niveles de exposición electromagnética en Colombia utilizando técnicas de Machine Learning."
+    },
+    {
+      "question": "¿Cuáles son los objetivos del proyecto?",
+      "answer": "El objetivo general es ilustrar las primeras fases del ciclo de vida de un modelo de Machine Learning aplicado a la predicción de niveles de exposición electromagnética en municipios de Colombia."
+    },
+    {
+      "question": "¿Qué es la exposición electromagnética?",
+      "answer": "Es la exposición a campos electromagnéticos generados por dispositivos electrónicos, redes de telecomunicaciones y otras fuentes, que pueden tener impacto en la salud y el medio ambiente."
+    },
+    {
+      "question": "¿Qué modelos de Machine Learning se usaron?",
+      "answer": "Se usaron modelos como Regresión Lineal, Árboles de Decisión, Random Forest y XGBoost, optimizados con técnicas como GridSearchCV."
+    },
+    {
+      "question": "¿Dónde puedo encontrar más información sobre los datos utilizados?",
+      "answer": "Los datos provienen de fuentes abiertas del gobierno colombiano, disponibles en https://www.datos.gov.co."
+    },
+    {
+      "question": "¿Cuál es el planteamiento del problema abordado?",
+      "answer": "El problema radica en la falta de un modelo predictivo eficiente que permita analizar y anticipar los niveles de exposición a campos electromagnéticos en función de variables ambientales, geográficas y temporales."
+    },
+    {
+      "question": "¿Cuáles son los beneficios de este proyecto?",
+      "answer": "Optimización del análisis de datos, mejora en la toma de decisiones, accesibilidad a la información, reducción de costos y aplicación de tecnología en la gestión ambiental."
+    },
+    {
+      "question": "¿Qué conclusiones se obtuvieron del proyecto?",
+      "answer": "Se demostró que es posible predecir la fluctuación de los niveles de exposición electromagnética en Colombia utilizando técnicas de Machine Learning. El modelo XGBoost optimizado fue el más destacado, y se recomienda ampliar la base de datos para mejorar la capacidad predictiva."
+    },
+    {
+      "question": "¿Quiénes participaron en el proyecto?",
+      "answer": "Participaron Andres Mauricio Ardila, Claudia Ines Giraldo, Marisela Lotero Zuluaga y como ejecutor técnico, la Ing. Darly Mildred Delgado."
+    },
+    {
+      "question": "¿Cuáles son los objetivos específicos del proyecto?",
+      "answer": "Configurar un entorno de trabajo eficiente, realizar un análisis exploratorio de datos, estructurar y limpiar los datos, desarrollar y evaluar modelos de Machine Learning, y diseñar una herramienta interactiva para presentar resultados."
+    },
+    {
+      "question": "¿Qué modelos de Machine Learning se usaron en el proyecto?",
+      "answer": "Se usaron Regresión Lineal, Árboles de Decisión, Random Forest y XGBoost, optimizados con técnicas como GridSearchCV."
+    },
+    {
+      "question": "¿Cómo se evaluaron los modelos de Machine Learning?",
+      "answer": "Se utilizaron métricas como el Error Cuadrático Medio (MSE) y el Coeficiente de Determinación (R²). El modelo XGBoost optimizado obtuvo un R² de 0.9158 en entrenamiento y 0.7845 en prueba, destacándose como el mejor modelo."
+    },
+    {
+      "question": "¿Cuál es la pregunta principal del proyecto?",
+      "answer": "¿Es posible predecir la fluctuación de los niveles de exposición electromagnética en diferentes regiones de Colombia utilizando técnicas de Machine Learning?"
+    },
+    {
+      "question": "¿Qué variables se consideraron en el proyecto?",
+      "answer": "Se consideraron variables ambientales, geográficas y temporales, además de datos abiertos sobre fuentes emisoras de radiación electromagnética."
+    },
+    {
+      "question": "¿Qué información técnica se utilizó en el proyecto?",
+      "answer": "Se aplicaron técnicas como codificación de variables categóricas (OneHotEncoder), normalización, escalado, análisis univariado, bivariado y multivariado, y reducción de dimensionalidad (PCA)."
+    },
+    {
+      "question": "¿Cuál es la relevancia social del proyecto?",
+      "answer": "Desde una perspectiva social, garantizar niveles seguros de exposición fortalecería la confianza en las tecnologías y permitiría a las comunidades vivir con mayor tranquilidad."
+    },
+    {
+      "question": "¿Cuál es la relevancia ambiental del estudio?",
+      "answer": "A nivel ambiental, una mejor gestión de la radiación ayudaría a preservar la biodiversidad, protegiendo ecosistemas y especies vulnerables que muestran sensibilidad a los campos electromagnéticos."
+    },
+    {
+      "question": "¿En qué fecha se presentó el proyecto?",
+      "answer": "El proyecto se presentó el 27 de abril de 2025 como parte del Bootcamp de Inteligencia Artificial Nivel Explorador del Ministerio de las Tecnologías de la Información y las Comunicaciones (MinTIC)."
+    },
+    {
+      "question": "¿Cuál es el nombre completo del proyecto?",
+      "answer": "Identificación y predicción de Niveles de Exposición Electromagnética en Departamentos de Colombia."
+    },
+    {
+      "question": "¿Qué entidad respaldó el desarrollo del proyecto?",
+      "answer": "El proyecto fue respaldado por el Ministerio de las Tecnologías de la Información y las Comunicaciones (MinTIC) como parte del Bootcamp de Inteligencia Artificial Nivel Explorador."
+    },
+    {
+      "question": "¿Por qué es importante estudiar la exposición electromagnética?",
+      "answer": "Es importante porque en un entorno cada vez más interconectado, donde las tecnologías inalámbricas y las redes de comunicación se expanden continuamente, resulta crucial evaluar y gestionar los posibles riesgos asociados a dicha radiación para la salud humana y el equilibrio ambiental."
+    },
+    {
+      "question": "¿Qué relevancia económica tiene el proyecto?",
+      "answer": "En términos económicos, la implementación de soluciones sostenibles evitaría costos asociados a problemas de salud o daños ambientales, al tiempo que impulsa el desarrollo de infraestructuras más seguras y eficientes."
+    },
+    {
+      "question": "¿Qué desafíos existen actualmente en Colombia respecto a la exposición electromagnética?",
+      "answer": "En Colombia, a pesar de la existencia de normativas y mediciones sobre estos niveles de exposición, aún se presentan desafíos en la identificación de patrones de comportamiento de la exposición en diferentes regiones del país."
+    },
+    {
+      "question": "¿Cuál es el problema principal que aborda el proyecto?",
+      "answer": "El problema radica en la falta de un modelo predictivo eficiente que permita analizar y anticipar los niveles de exposición a campos electromagnéticos en función de diversas variables ambientales, geográficas y temporales."
+    },
+    {
+      "question": "¿Por qué es necesario un enfoque basado en Machine Learning para este problema?",
+      "answer": "Porque actualmente la identificación de zonas con alta exposición electromagnética depende de mediciones manuales que requieren tiempo y recursos. Un modelo de Machine Learning permitirá optimizar este proceso, mejorando la eficiencia en el monitoreo y control de la exposición a EMF."
+    },
+    {
+      "question": "¿Qué tipo de datos se utilizaron en el proyecto?",
+      "answer": "Se utilizaron datos abiertos sobre fuentes emisoras de radiación electromagnética, así como variables ambientales, geográficas y temporales relevantes para la predicción de niveles de exposición."
+    },
+    {
+      "question": "¿Qué técnicas de análisis de datos se aplicaron?",
+      "answer": "Se aplicaron técnicas como codificación de variables categóricas (OneHotEncoder), normalización, escalado, análisis univariado, bivariado y multivariado, y reducción de dimensionalidad (PCA)."
+    },
+    {
+      "question": "¿Qué herramientas se usaron para el desarrollo del proyecto?",
+      "answer": "Se utilizó Python como lenguaje de programación, junto con bibliotecas como Pandas, NumPy, Scikit-learn y XGBoost para el desarrollo y evaluación de los modelos."
+    },
+    {
+      "question": "¿Cuál es la importancia de la validación cruzada en el proyecto?",
+      "answer": "La validación cruzada es crucial para evaluar la capacidad predictiva del modelo y evitar el sobreajuste. Permite obtener una estimación más precisa del rendimiento del modelo en datos no vistos."
+    },
+    {
+      "question": "¿Qué recomendaciones se hacen para futuros estudios?",
+      "answer": "Se recomienda ampliar la base de datos con más variables relevantes y realizar un análisis más profundo sobre la influencia de factores externos en los niveles de exposición electromagnética."
+    },
+    {
+      "question": "¿Cómo se puede acceder al código fuente del proyecto?",
+      "answer": "El código fuente del proyecto está disponible en GitHub en el siguiente enlace: [GitHub Repository]()"
+    },
+    {
+      "question": "¿Qué es el Bootcamp de Inteligencia Artificial Nivel Explorador?",
+      "answer": "Es un programa del Ministerio de las Tecnologías de la Información y las Comunicaciones (MinTIC) que busca capacitar a los participantes en el uso de herramientas y técnicas de inteligencia artificial para resolver problemas reales."
+    },
+    {
+      "question": "¿Qué módelo se uso para entrenar este chatbot?",
+      "answer": "Este chatbot fue entrenado utilizando el modelo GPT-3.5 de OpenAI, que es un modelo de lenguaje avanzado capaz de comprender y generar texto en lenguaje natural."
+    }
+  ]
 }
