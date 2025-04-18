@@ -1,0 +1,281 @@
+Bootcamp del Ministerio de las TIC
+Identificación y predicción de Niveles de Exposición Electromagnética en Departamentos de Colombia
+Participantes:
+Andres Mauricio Ardila
+Claudia Ines Giraldo
+Marisela Lotero Zuluaga 
+Ejecutor Técnico
+Ing. Darly Mildred Delgado
+Bootcamp de Inteligencia artificial Nivel Explorador
+Ministerio de las Tecnologías de la Información y las Comunicaciones (MinTIC)
+27 de abril de 2025
+Introducción
+Este estudio se enfoca en la identificación y predicción de la exposición a la radiación electromagnética, un factor con potencial impacto tanto en la salud humana como en el equilibrio ambiental. En un entorno cada vez más interconectado, donde las tecnologías inalámbricas y las redes de comunicación se expanden continuamente, resulta crucial evaluar y gestionar los posibles riesgos asociados a dicha radiación. Esta problemática no solo genera inquietudes en la población respecto a su bienestar, sino que también puede afectar la flora y la fauna, ya que algunas especies muestran sensibilidad a los campos electromagnéticos.
+Abordar esta problemática tiene una gran relevancia social, ambiental y económica. Desde una perspectiva social, garantizar niveles seguros de exposición fortalecería la confianza en las tecnologías y permitiría a las comunidades vivir con mayor tranquilidad. A nivel ambiental, una mejor gestión de la radiación ayudaría a preservar la biodiversidad, protegiendo ecosistemas y especies vulnerables. En términos económicos, la implementación de soluciones sostenibles evitaría costos asociados a problemas de salud o daños ambientales, al tiempo que impulsa el desarrollo de infraestructuras más seguras y eficientes. Con el avance de la investigación científica, la evolución de las regulaciones y una mayor conciencia pública,lo que podría contribuir significativamente a la construcción de un entorno más saludable y tecnológicamente responsable.
+
+
+Planteamiento del Problema
+En la actualidad, el aumento exponencial de dispositivos electrónicos y la infraestructura de telecomunicaciones han generado preocupaciones sobre la exposición a campos electromagnéticos (EMF) y sus posibles efectos en la salud. En Colombia, a pesar de la existencia de normativas y mediciones sobre estos niveles de exposición, aún se presentan desafíos en la identificación de patrones de comportamiento de la exposición en diferentes regiones del país.
+El problema radica en la falta de un modelo predictivo eficiente que permita analizar y anticipar los niveles de exposición a campos electromagnéticos en función de diversas variables ambientales, geográficas y temporales. Actualmente, los datos existentes no han sido explotados de manera óptima para generar información útil en la toma de decisiones regulatorias y de planificación urbana.
+Para abordar esta problemática, la iniciativa se orienta al desarrollo de un modelo de Machine Learning capaz de predecir los niveles de exposición electromagnética a partir de datos abiertos de Colombia. Esto implica un análisis exploratorio detallado, la identificación de variables clave y la optimización del modelo mediante la eliminación de outliers y la aplicación de técnicas avanzadas de preprocesamiento. La solución propuesta permitirá mejorar la comprensión de los factores que influyen en la exposición y facilitará la toma de decisiones informadas en materia de regulación y mitigación de riesgos.
+Esta propuesta resulta fundamental, ya que responde a una problemática con impacto en la salud pública, la planificación urbana y la gestión ambiental.
+El aumento de infraestructuras de telecomunicaciones en Colombia ha generado preocupación sobre los niveles de exposición a campos electromagnéticos (EMF). Aunque existen regulaciones, no hay suficientes herramientas predictivas basadas en datos abiertos que permitan evaluar con precisión los riesgos asociados. Este enfoque resulta relevante porque introduce un enfoque basado en Machine Learning para analizar y predecir patrones de exposición, facilitando la toma de decisiones informadas en áreas de planificación urbana, salud pública y telecomunicaciones.
+Actualmente, la identificación de zonas con alta exposición electromagnética depende de mediciones manuales que requieren tiempo y recursos. Además, la falta de modelos de predicción impide anticipar posibles incrementos en los niveles de exposición a medida que crece la infraestructura tecnológica. La implementación de un modelo de Machine Learning permitirá optimizar este proceso, mejorando la eficiencia en el monitoreo y control de la exposición a EMF.
+Beneficios :
+Optimización del análisis de datos: Permitirá evaluar patrones de exposición sin depender exclusivamente de mediciones manuales.
+Mejora en la toma de decisiones: Autoridades y empresas podrán anticipar zonas críticas y aplicar medidas preventivas.
+Accesibilidad a la información: Se facilitará el acceso a modelos predictivos basados en datos abiertos, promoviendo transparencia.
+Reducción de costos: Minimiza la necesidad de mediciones constantes, optimizando el uso de recursos.
+Aplicación de tecnología en la gestión ambiental: Fomentará el uso de Machine Learning  para resolver problemas reales, integrando la inteligencia artificial en la regulación de exposición electromagnética.
+Esta iniciativa representa una solución innovadora y eficiente para la gestión de la exposición electromagnética en Colombia, beneficiando a entidades reguladoras, empresas y la sociedad en general. 
+Objetivos
+General :
+Ilustrar las primeras fases del ciclo de vida de un modelo de Machine Learning aplicado a la predicción de niveles de exposición electromagnética en municipios de Colombia.
+Específicos: 
+Configurar un entorno de trabajo eficiente utilizando herramientas tecnológicas como Python, Jupyter Notebooks, pandas y numpy, asegurando una infraestructura adecuada para el análisis y modelado de datos.
+Definir el contexto y problema a resolver, seleccionando datos relevantes de fuentes abiertas.
+Realizar un análisis exploratorio de datos (EDA) que incluya carga de datos, evaluación de calidad, tratamiento de valores ausentes, normalización y análisis estadísticos (univariado, bivariado y multivariado) para detectar patrones y tendencias aplicado a la predicción de niveles de exposición.
+Estructurar, limpiar y preparar los datos utilizando herramientas especializadas para mejorar la calidad del dataset y seleccionar variables clave que permitan desarrollar modelos predictivos o de clasificación eficientes.
+Desarrollar y evaluar modelos de Machine Learning, aplicando distintos algoritmos de aprendizaje supervisado, optimizando hiperparámetros y seleccionando aquellos con mayor precisión y eficiencia en la predicción de niveles de exposición.
+Diseñar e implementar una herramienta  interactiva, para presentar los resultados del análisis de manera clara y accesible, mejorando la comunicación con los stakeholders y optimizando la toma de decisiones basadas en datos.
+
+Marco Teórico
+La Inteligencia Artificial (IA) es un campo de la informática que busca desarrollar sistemas capaces de realizar tareas que tradicionalmente requieren inteligencia humana. Estas tareas incluyen el reconocimiento de patrones, la toma de decisiones, la resolución de problemas, el procesamiento del lenguaje natural y el aprendizaje a partir de datos.
+La IA se puede clasificar en dos grandes categorías:
+   IA Débil: Diseñada para realizar tareas específicas sin comprender realmente el contexto (por ejemplo, asistentes virtuales como Siri o Alexa).
+   IA Fuerte: Un concepto teórico que implicaría una inteligencia equiparable o superior a la humana, capaz de razonar, planificar y aprender de manera autónoma.
+En el contexto del análisis de datos, la IA permite la automatización de procesos complejos y la toma de decisiones basadas en grandes volúmenes de información.
+El aprendizaje de máquina (ML) es una rama de la IA que se enfoca en el desarrollo de algoritmos que permiten a los sistemas aprender patrones y hacer predicciones a partir de datos sin necesidad de ser programados explícitamente.
+El ML se basa en el entrenamiento de modelos estadísticos que identifican relaciones entre variables en un conjunto de datos. A medida que el modelo recibe más información, mejora su capacidad de generalización y precisión en las predicciones.
+Existen tres enfoques principales en ML:
+Aprendizaje Supervisado:
+        El modelo aprende a partir de un conjunto de datos etiquetados, donde cada entrada tiene una salida conocida. Se usa para tareas como clasificación (por ejemplo, detección de spam) y regresión (por ejemplo, predicción de precios de viviendas).
+Aprendizaje No Supervisado:
+        No hay etiquetas en los datos; el modelo busca patrones ocultos o estructuras en la información. Incluyen clustering (agrupación de clientes en marketing) y reducción de dimensionalidad (como PCA para visualizar datos en menos dimensiones).
+Aprendizaje por Refuerzo:
+        Un agente aprende interactuando con un entorno y recibiendo recompensas por acciones correctas. Es utilizado en robótica y juegos de IA (como AlphaGo de Google DeepMind).
+La ciencia de datos es un campo interdisciplinario que combina estadística, ML, matemáticas e ingeniería de datos para extraer información valiosa a partir de datos. Mientras que ML es una herramienta clave dentro de la ciencia de datos, esta última también incluye procesos como la recolección, limpieza, análisis y visualización de datos.
+El desarrollo de una solución basada en  Machine Learning sigue una serie de etapas estructuradas, que garantizan la correcta implementación y desempeño del modelo. Estas etapas incluyen:
+   Definición del problema: Se identifica el problema específico a resolver y se establecen objetivos medibles.
+   Recolección y preparación de datos: Se obtienen los datos relevantes, se limpian, se transforman y se preparan para su análisis.
+   Exploración y análisis de datos: Se realizan análisis estadísticos y visualizaciones para comprender patrones, relaciones y posibles problemas en los datos.
+   Selección y entrenamiento del modelo: Se eligen los algoritmos adecuados y se entrenan utilizando un conjunto de datos de entrenamiento.
+   Evaluación y ajuste del modelo: Se mide el rendimiento del modelo en un conjunto de prueba y se ajustan los parámetros para mejorar la precisión.
+   Implementación y despliegue: Se integra el modelo en un sistema productivo o herramienta interactiva.
+   Monitoreo y mantenimiento: Se revisa continuamente el desempeño del modelo en entornos reales y se realizan ajustes según sea necesario.
+Cada una de estas fases es crucial para asegurar el éxito del proceso, evitando errores que puedan comprometer la calidad de los resultados.
+El Análisis Exploratorio de Datos (EDA) es un paso fundamental en la construcción de modelos de Machine Learning. Su objetivo es examinar la calidad y estructura de los datos antes de aplicar técnicas avanzadas. Incluye:
+   Carga y evaluación de datos: Se revisa la fuente de los datos, su formato y consistencia.
+   Tratamiento de datos ausentes: Se identifican valores faltantes y se aplican estrategias para su manejo, como imputación o eliminación.
+   Normalización y escalado: Se ajustan los valores de las variables para mejorar la estabilidad del modelo.
+   Análisis univariado, bivariado y multivariado: Se exploran distribuciones individuales de variables, relaciones entre pares de variables y estructuras de datos más complejas.
+Existen diversos algoritmos de Machine Learning utilizados para la creación de modelos predictivos. En este estudio se consideran técnicas como:
+   Regresión Lineal: Es un modelo matemático que se usa para encontrar la relación entre una variable dependiente (lo que queremos predecir) y una o más variables independientes (los factores que influyen en la predicción). Se basa en la idea de trazar una línea recta que mejor se ajuste a los datos.
+   Árbol de Decisión: Es un modelo de Machine Learning que toma decisiones dividiendo los datos en ramas según sus características. Funciona como un diagrama de preguntas y respuestas, donde cada pregunta acerca los datos a una posible solución.
+   Random Forest:  Es un modelo de Machine Learning que usa muchos árboles de decisión para hacer predicciones más precisas. En lugar de depender de un solo árbol (que puede equivocarse fácilmente), crea varios árboles y combina sus respuestas para dar un mejor resultado. Es como preguntarle a un grupo de expertos en lugar de solo a uno.
+   XGBoost: Es un modelo avanzado basado en árboles de decisión que mejora continuamente su precisión. Funciona entrenando varios árboles de forma secuencial, corrigiendo los errores del anterior en cada paso. Es muy rápido y preciso, por eso se usa mucho en competencias de Machine Learning y en análisis de datos complejos.
+El proceso de preparación y limpieza de datos es crucial para garantizar la calidad de los modelos predictivos. Entre las estrategias utilizadas se incluyen:
+   Codificación de variables categóricas: Métodos como OneHotEncoder transforman variables no numéricas en formatos utilizables por algoritmos.
+   Manejo de outliers: Se detectan y eliminan valores atípicos que pueden sesgar los resultados.
+   Reducción de dimensionalidad: Técnicas como PCA ayudan a reducir el número de variables manteniendo la información más relevante.
+Estas técnicas son fundamentales en la optimización del modelo, permitiendo una mayor precisión y robustez en las predicciones.
+Para validar la efectividad del modelo de Machine Learning, se utilizan métricas de evaluación como:
+   Error Cuadrático Medio (MSE): Mide la diferencia promedio al cuadrado entre los valores reales y las predicciones.
+   Coeficiente de Determinación (R²): Indica qué porcentaje de la variabilidad de la variable objetivo es explicada por el modelo.
+   Precisión y Recall: En problemas de clasificación, miden la calidad de las predicciones positivas.
+La correcta aplicación de estas métricas permite comparar modelos y seleccionar el más adecuado para la problemática abordada.
+Por otro lado es necesario explorar el concepto de exposición electromagnética y sus efectos en la salud humano y el medio ambiente
+
+
+Los Campos Electromagnéticos (CEM) son ondas invisibles de energía que resultan de la combinación de campos eléctricos y magnéticos. Estos campos están presentes en la naturaleza y también son generados por la actividad humana, especialmente a través del uso de electricidad y tecnología de comunicaciones.
+La Organización Mundial de la Salud (OMS) ha clasificado los CEM en dos grandes grupos según su frecuencia:
+   Campos de baja frecuencia (ELF, Extremely Low Frequency): Emitidos por redes eléctricas, electrodomésticos y dispositivos industriales.
+   Campos de alta frecuencia (RF, Radio Frequency): Generados por antenas de radio, televisión, telefonía móvil, microondas y redes Wi-Fi.
+El impacto de estos campos en la salud humana ha sido un tema de investigación constante, dando lugar a regulaciones y normativas que buscan minimizar riesgos.
+
+
+La exposición a CEM en la vida cotidiana proviene de diversas fuentes, entre ellas:
+   Infraestructura eléctrica:
+
+   Líneas de transmisión y distribución de energía.
+   Transformadores y subestaciones eléctricas.
+
+
+   Dispositivos de comunicación:
+
+        Teléfonos celulares y estaciones base de telefonía móvil.
+        Redes Wi-Fi y Bluetooth.
+        Emisoras de radio y televisión.
+
+
+         Equipos electrodomésticos y tecnología de consumo:
+
+            Hornos de microondas, televisores y computadoras.
+            Dispositivos de seguridad como escáneres de aeropuertos.
+            Automóviles eléctricos y sus sistemas de carga.
+El nivel de exposición depende de la intensidad de la emisión, la distancia a la fuente y el tiempo de exposición.
+La exposición a CEM ha sido objeto de estudio por su posible impacto en la salud. Según la OMS y el Centro Internacional de Investigaciones sobre el Cáncer (IARC), los CEM de radiofrecuencia han sido clasificados como "posiblemente cancerígenos para los humanos" (Grupo 2B), lo que significa que aún no existe evidencia concluyente pero hay indicios de posibles efectos adversos.
+Los efectos inmediatos de la exposición a CEM dependen de la frecuencia y la intensidad del campo. Algunos estudios han reportado:
+            Sensación de calor en tejidos expuestos a radiaciones intensas (como en el uso excesivo del teléfono móvil).
+            Alteraciones en la actividad eléctrica del cerebro, cambios en patrones de sueño y fatiga.
+            Mareos, dolores de cabeza y dificultad para concentrarse en personas sensibles.
+A largo plazo, se han estudiado posibles vínculos entre la exposición continua a CEM y:
+            Leucemia infantil: Asociada a la proximidad a líneas de alta tensión.
+            Tumores cerebrales: Investigaciones sobre el uso prolongado de teléfonos celulares y el riesgo de gliomas.
+            Alteraciones neurológicas: Algunos estudios sugieren que la exposición prolongada podría influir en enfermedades neurodegenerativas como el Alzheimer y el Parkinson.
+            Efectos en el sistema endocrino: Posibles alteraciones en la producción de melatonina, hormona clave en la regulación del sueño y el sistema inmune.
+Sin embargo, la mayoría de los estudios concluyen que se necesitan más investigaciones para confirmar estos efectos y establecer mecanismos causales.
+Colombia ha adoptado regulaciones alineadas con las recomendaciones internacionales para controlar la exposición a CEM:
+            Agencia Nacional del Espectro (ANE): Regula el espectro electromagnético y establece lineamientos técnicos para la instalación de antenas y redes de telecomunicaciones.
+            Ministerio de Tecnologías de la Información y las Comunicaciones (MinTIC): Supervisa el cumplimiento de las normas sobre emisiones de radiofrecuencia.
+            Ministerio de Salud y Protección Social: Monitorea los posibles efectos de la exposición a CEM en la salud pública.
+El límite de exposición permitido en Colombia sigue los estándares de la Comisión Internacional de Protección contra la Radiación No Ionizante (ICNIRP), organismo avalado por la OMS.
+
+
+
+
+
+
+
+
+Desarrollo del Proyecto
+Misión 1
+El objetivo consiste en definir el ciclo de vida de una solución basada en Machine Learning, comprendiendo sus etapas clave desde la identificación del problema hasta la implementación del modelo en un entorno real. Este proceso se divide en las siguientes fases:
+            Definición del Problema:Implica reconocer la necesidad específica que se desea abordar y formular las preguntas clave que el modelo debe responder.
+
+            Obtención y Exploración de Datos: Recolección de datos relevantes, limpieza, transformación y análisis exploratorio para entender sus características.
+
+            Preprocesamiento y Tratamiento de Datos: Incluye la normalización, codificación de variables categóricas, eliminación de valores atípicos y manejo de datos faltantes.
+
+            Selección de Modelos y Entrenamiento: Comparación y selección del modelo más adecuado, ajuste de hiperparámetros y entrenamiento.
+
+            Evaluación del Modelo: Medición del desempeño del modelo utilizando métricas relevantes como error cuadrático medio, R², precisión, entre otros.
+
+            Implementación y Monitoreo: Despliegue del modelo en un entorno real y monitoreo de su desempeño para posibles ajustes.
+
+El éxito de una iniciativa de Machine Learning depende de la correcta ejecución de cada una de estas etapas, garantizando la calidad de los datos y la efectividad del modelo en la toma de decisiones.
+
+
+               Instalación y configuración de entorno de trabajo:
+Para llevar a cabo este desarrollo, se configuró un entorno de trabajo en Python con librerías especializadas para el tratamiento de datos y el entrenamiento de modelos de Machine Learning. Se utilizó la plataforma Anaconda, que facilita la instalación, gestión y ejecución de herramientas como Jupyter Notebooks, en un entorno virtual independiente del sistema operativo que lo hospeda.
+A continuación, se detalla el proceso de instalación y ejecución de dicho entorno.
+
+
+  
+
+Para más detalle remítase al enlace: 
+Mision 1.pdf
+2. Buscar y seleccionar línea de investigación
+El problema identificado es la falta de análisis predictivo sobre la exposición electromagnética en Colombia. Aunque existen bases de datos abiertas con información sobre fuentes emisoras de radiación electromagnética, estos datos no han sido ampliamente utilizados para construir modelos que permitan predecir la exposición en diferentes regiones del país.
+La pregunta principal que busca responder este estudio es:
+
+¿Es posible predecir la fluctuación de los niveles de exposición electromagnética en diferentes regiones de Colombia utilizando técnicas de Machine Learning?
+Para ello, se utilizaron datos abiertos del gobierno colombiano, los cuales fueron analizados y transformados para desarrollar un modelo predictivo que permita identificar patrones y tendencias en la exposición electromagnética a nivel geográfico.
+La fuente original proviene del siguiente enlace:
+https://www.datos.gov.co/Ciencia-Tecnolog-a-e-Innovaci-n/Mediciones-de-exposici-n-a-campos-electromagn-tico/vhn3-kbc6/about_data.
+
+
+Explorar datasets
+Análisis Exploratorio de Datos (EDA)
+
+
+El análisis exploratorio de datos constituye una etapa fundamental en cualquier desarrollo basado en Machine Learning,  ya que permite comprender la estructura, características y calidad de la información disponible antes de entrenar un modelo.
+Carga de Datos
+               Se utilizaron bases de datos provenientes de Datos Abiertos de Colombia, que contienen información sobre dispositivos de medición ubicados  en diferentes lugares de la geografía que muestran los niveles de exposición electromagnética.
+
+               Los datos fueron cargados en un entorno de trabajo utilizando Python y bibliotecas como Pandas y NumPy para su manipulación.
+
+Para más detalles remítase al notebook: Mision1 con analisis_v2.ipynb
+  
+Estructurar datos con pandas aplicando limpieza y análisis de data
+Evaluación de Calidad de los Datos
+Se realizaron diferentes procesos para garantizar la calidad de la información, incluyendo:
+Detección y tratamiento de valores faltantes en variables clave.
+
+Identificación y eliminación de valores atípicos para evitar sesgos en el modelo.
+
+Conversión y estandarización de formatos de variables categóricas y numéricas.
+
+
+Para ver detalles remítase al notebook: Mision1 con analisis_v2.ipynb
+  
+Visualización de data
+Tratamiento de Datos Ausentes y Normalización
+                  Para las variables categóricas, se aplicaron técnicas de codificación como OneHotEncoder, permitiendo transformar los datos en un formato adecuado para el modelo.
+
+                  Para las variables numéricas, se implementó normalización y escalado, asegurando que todas las variables estuvieran en rangos comparables.
+  
+Identificar datos para predicción o clasificación
+Análisis Univariado, Bivariado y Multivariado
+                     Análisis Univariado: Se estudiaron distribuciones de cada variable para identificar patrones y sesgos.
+
+                     Análisis Bivariado: Se exploraron correlaciones entre variables para determinar cuáles influyen en la exposición electromagnética.
+
+                     Análisis Multivariado: Se aplicaron técnicas de reducción de dimensionalidad y modelos de regresión para evaluar la relación entre múltiples variables.
+
+
+Para más detalles remítase al notebook: Mision1-2.ipynb
+
+En este proceso, se detectó que había pocas variables cuantitativas disponibles para entrenar el modelo, lo que representó un reto en la selección de características relevantes.
+Se realiza entonces un proceso de transformación de variables y evaluación de las relaciones; como se evidencia en la siguiente matriz:
+Para más información remítase al notebook:  Mision1-2.ipynb
+Entrenamiento de data
+Finalmente cuando los datos se encuentran modelados se almacenan para tenerlos listos para entrenar los modelos.
+Para más detalles remítase al dataset procesado:  dataset_final_sin_outliers.csv
+Testing de data
+Análisis de Resultados
+Al analizar las columnas del conjunto de datos, identificamos que la variable de interés era el nivel de exposición. Sin embargo, encontramos que algunas variables requerían transformación para ser utilizadas de manera efectiva en el modelo. La primera decisión metodológica fue optar por un enfoque de predicción, ya que la variable a analizar era cuantitativa, lo que nos permitió aplicar modelos de regresión.
+Preprocesamiento de datos
+Inicialmente, ajustamos los formatos de las columnas, encontrando que la variable de fecha requería mejoras en su formato. Además, las variables ciudad y departamento fueron simplificadas a solo departamento, y categorizamos el nivel de exposición en baja, media o alta. También extrajimos el mes de la fecha y lo incorporamos en una nueva columna.
+Para preparar los datos para el modelo, utilizamos la técnica de One-Hot Encoding, lo que permitió representar el nivel de exposición por mes como variables numéricas. En este punto, definimos la variable X (nivel de exposición) como la variable a predecir y las variables Y como las explicativas, que incluyen el mes y la exposición por mes.
+9. Aplicar modelos de Machine Learning
+Entrenamiento y Evaluación de Modelos
+El primer modelo que probamos fue una Regresión Lineal, obteniendo un buen nivel de predicción. Sin embargo, observamos que el modelo lograba predecir aproximadamente un 70%, dejando un 30% de datos sin ajustar correctamente. Para mejorar el desempeño, eliminamos valores atípicos utilizando los cuartiles y la técnica de rango intercuartílico. Al aplicar nuevamente el modelo con los datos depurados, los resultados mejoraron significativamente.
+Como métricas de evaluación, utilizamos:
+Error Cuadrático Medio (MSE): Indicador del error en la predicción.
+Coeficiente de Determinación (R²): Mide la capacidad del modelo para explicar la variabilidad de los datos.
+
+En la Regresión Lineal, obtuvimos un MSE de 0.0000001 y un R² de 0.9174, lo que indica un alto nivel de predicción con un error mínimo.
+Medición de Modelos
+Para evaluar el comportamiento de los datos en distintos enfoques, aplicamos otros modelos de predicción:
+Árboles de Decisión:
+MSE = 0
+R² = 1 (entrenamiento) / 0.95 (prueba)
+Indica un posible sobreajuste del modelo.
+Random Forest:
+MSE = 0.0000002
+R² = 0.7580 (entrenamiento) / 0.4792 (prueba)
+Los resultados muestran que el modelo no se ajusta bien a nuestros datos, posiblemente debido a la profundidad de los árboles.
+XGBoost:
+MSE = 0
+R² = 0.9014 (entrenamiento) / 0.7544 (prueba)
+Presenta buenos resultados, aunque con posibilidad de optimización.
+
+Para mejorar el desempeño del modelo XGBoost, aplicamos ajuste de hiperparámetros utilizando la técnica GridSearchCV. Con esta optimización, obtuvimos:
+MSE = 0
+R² = 0.9158 (entrenamiento) / 0.7845 (prueba)
+
+Esto indica que el modelo mejoró con los ajustes, igualando la predicción de la Regresión Lineal pero con una mayor profundidad en el análisis y mejor ajuste de predicción.
+Conclusiones del Proyecto
+
+
+El desarrollo de esta solución permitió establecer un modelo predictivo para la exposición electromagnética en Colombia, utilizando técnicas de Machine Learning  aplicadas a datos abiertos. A través de un proceso riguroso de exploración, preprocesamiento y modelado, se obtuvieron los siguientes hallazgos y aprendizajes clave:
+Definición del Problema y Obtención de Datos
+Se identificó la carencia de análisis predictivo en la exposición electromagnética en Colombia.
+Se utilizaron bases de datos abiertas del gobierno colombiano, realizando un proceso de limpieza, transformación y exploración de datos para comprender su estructura y relevancia.
+Preprocesamiento y Tratamiento de Datos
+Se aplicaron técnicas de normalización, codificación de variables categóricas (One-Hot Encoding), eliminación de valores atípicos y ajuste de formatos para mejorar la calidad de los datos.
+Se redefinió la variable de interés (nivel de exposición) en categorías baja, media y alta, permitiendo una mejor interpretación del fenómeno.
+Selección y Evaluación de Modelos
+Se implementaron varios modelos de Machine Learning, evaluando su rendimiento con métricas como el Error Cuadrático Medio (MSE) y el Coeficiente de Determinación (R²):
+Regresión Lineal: R² de 0.9174 con MSE de 0.0000001, demostrando una buena capacidad predictiva.
+Árboles de Decisión: Alto R² en entrenamiento (1) pero con indicios de sobreajuste (0.95 en prueba).
+Random Forest: Desempeño moderado con R² de 0.7580 en entrenamiento y 0.4792 en prueba, indicando dificultad en la generalización.
+XGBoost: Mostró mejores resultados con un R² de 0.9014 en entrenamiento y 0.7544 en prueba.
+Tras la optimización con GridSearchCV, el modelo XGBoost mejoró su R² a 0.9158 en entrenamiento y 0.7845 en prueba, consolidándose como la mejor opción para el problema.
+Consideraciones Finales y Recomendaciones
+Calidad de Datos: La falta de variables cuantitativas limitó la capacidad del modelo para realizar predicciones más precisas.
+Mejoras Futuras: Se recomienda ampliar la base de datos con nuevas fuentes y variables relevantes, como condiciones meteorológicas y distribución de infraestructuras emisoras.
+Aplicación Práctica: Este estudio sienta las bases para la creación de herramientas que permitan a entidades regulatorias y ciudadanos monitorear y prever la exposición electromagnética en distintas regiones.
+
+En conclusión, este trabajo demostró que es posible predecir la fluctuación de los niveles de exposición electromagnética en Colombia utilizando técnicas de Machine Learning (ML). Los modelos implementados alcanzaron un buen desempeño, destacándose XGBoost tras el ajuste de hiperparámetros. Se recomienda continuar con estudios adicionales que permitan mejorar la capacidad de predicción y aumentar la aplicabilidad del modelo en escenarios reales.

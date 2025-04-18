@@ -1,0 +1,36 @@
+{
+    "faq": [
+        {
+            "question": "¿Cuáles son las normas del crucero?",
+            "answer": "Las normas del crucero incluyen el respeto a los horarios de comida, el uso de ropa adecuada en las áreas comunes y la prohibición de fumar en ciertas zonas."
+        },
+        {
+            "question": "¿Qué actividades se ofrecen a bordo?",
+            "answer": "A bordo se ofrecen diversas actividades como clases de baile, talleres de cocina, espectáculos en vivo y excursiones en tierra."
+        },
+        {
+            "question": "¿Cómo puedo hacer una reserva?",
+            "answer": "Puedes hacer una reserva a través de nuestro sitio web o contactando a nuestro servicio de atención al cliente."
+        },
+        {
+            "question": "¿Qué documentos necesito para embarcar?",
+            "answer": "Necesitarás tu pasaporte, el billete del crucero y cualquier otro documento requerido por las autoridades del puerto."
+        },
+        {
+            "question": "¿Hay opciones de comida para dietas especiales?",
+            "answer": "Sí, ofrecemos opciones de comida para dietas especiales, incluyendo vegetarianas, veganas y sin gluten. Por favor, infórmanos con antelación."
+        },
+        {
+            "question": "¿Qué debo hacer en caso de emergencia?",
+            "answer": "En caso de emergencia, sigue las instrucciones del personal del crucero y dirígete a los puntos de reunión designados."
+        },
+        {
+            "question": "¿Puedo llevar mascotas a bordo?",
+            "answer": "No se permiten mascotas a bordo, excepto en casos de animales de servicio."
+        },
+        {
+            "question": "¿Cómo puedo contactar al servicio de atención al cliente?",
+            "answer": "Puedes contactar al servicio de atención al cliente a través de nuestro número de teléfono o correo electrónico que se encuentra en nuestra página web."
+        }
+    ]
+}
