@@ -171,6 +171,37 @@ h1 {
   transform: translateY(1px);
 }
 
+/* Estilos para el botón de micrófono */
+#mic-button {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mic-button:hover {
+    background-color: #2b5fba;
+}
+
+#mic-button.listening {
+    background-color: #ea4335;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
 .project-info {
   margin: 2rem auto;
   max-width: 800px;

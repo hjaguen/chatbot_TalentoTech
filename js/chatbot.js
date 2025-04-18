@@ -256,8 +256,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const userInputField = document.getElementById("user-input");
     const chatButton = document.getElementById("chat-button");
     const chatWindow = document.getElementById("chat-window");
+    const micButton = document.getElementById("mic-button");
 
-    chatButton.addEventListener("click", async function() {
+    // Función para enviar mensaje
+    async function sendMessage() {
         const userInput = userInputField.value;
         if (userInput) {
             const userMessage = document.createElement("div");
@@ -265,14 +267,58 @@ document.addEventListener("DOMContentLoaded", function() {
             userMessage.textContent = userInput;
             chatWindow.appendChild(userMessage);
 
+            // Mostrar indicador de carga mientras se procesa la respuesta
+            const loadingIndicator = document.createElement("div");
+            loadingIndicator.classList.add("bot-message");
+            loadingIndicator.innerHTML = '<span class="loading"></span> Procesando...';
+            chatWindow.appendChild(loadingIndicator);
+            
+            // Desplazarse al final del chat
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+
+            // Obtener respuesta del bot
             const botResponse = await getBotResponse(userInput);
+            
+            // Reemplazar indicador de carga con la respuesta
+            chatWindow.removeChild(loadingIndicator);
+            
             const botMessage = document.createElement("div");
             botMessage.classList.add("bot-message");
             botMessage.textContent = botResponse;
             chatWindow.appendChild(botMessage);
 
-            userInputField.value = ""; // Clear input field
-            chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to bottom
+            userInputField.value = ""; // Limpiar campo de entrada
+            chatWindow.scrollTop = chatWindow.scrollHeight; // Desplazarse al final
+        }
+    }
+
+    // Evento de click para el botón de enviar
+    chatButton.addEventListener("click", sendMessage);
+
+    // Evento de tecla para permitir enviar con Enter
+    userInputField.addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            sendMessage();
         }
     });
+    
+    // Integración con reconocimiento de voz
+    if (window.voiceRecognition) {
+        // Agregar evento para enviar automáticamente después de reconocer la voz
+        if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.onresult = function(event) {
+                userInputField.value = event.results[0][0].transcript;
+                // Pequeña pausa antes de enviar para que el usuario vea lo que se reconoció
+                setTimeout(sendMessage, 500);
+            };
+            
+            // Reemplazar el evento click del micrófono
+            micButton.addEventListener("click", function() {
+                if (window.voiceRecognition) {
+                    window.voiceRecognition.toggle();
+                }
+            });
+        }
+    }
 });
