@@ -16,7 +16,8 @@ let answers = [];
 // Función para cargar el corpus desde data.json
 async function loadCorpus() {
     try {
-        const response = await fetch('../data/data.json');
+        // Cambio: usar una ruta relativa desde la raíz del sitio en lugar de una ruta relativa
+        const response = await fetch('./data/data.json');
         corpus = await response.json();
         
         // Preparar las preguntas y respuestas para vectorización
@@ -29,6 +30,8 @@ async function loadCorpus() {
         return true;
     } catch (error) {
         console.error('Error al cargar el corpus:', error);
+        // Mostrar más detalles sobre el error para facilitar la depuración
+        console.error('Detalles del error:', error.message);
         return false;
     }
 }
