@@ -31,6 +31,22 @@
         {
             "question": "¿Cómo puedo contactar al servicio de atención al cliente?",
             "answer": "Puedes contactar al servicio de atención al cliente a través de nuestro número de teléfono o correo electrónico que se encuentra en nuestra página web."
+        },
+        {
+            "question": "¿Quiénes son los participantes del proyecto?",
+            "answer": "El proyecto cuenta con la participación de investigadores de la Universidad Nacional, profesionales en ingeniería electromagnética y especialistas en machine learning."
+        },
+        {
+            "question": "¿Cuáles son los objetivos del proyecto?",
+            "answer": "El objetivo general del proyecto es desarrollar un modelo predictivo para la exposición electromagnética utilizando técnicas de machine learning. Los objetivos específicos incluyen la recolección de datos, implementación de algoritmos y validación de resultados."
+        },
+        {
+            "question": "¿Cuáles son las conclusiones del estudio?",
+            "answer": "Las conclusiones principales del estudio muestran que los modelos de machine learning pueden predecir con precisión los niveles de exposición electromagnética, siendo Random Forest el algoritmo con mejor desempeño."
+        },
+        {
+            "question": "¿Qué beneficios tiene el proyecto?",
+            "answer": "Los beneficios del proyecto incluyen mejor comprensión de la exposición electromagnética, herramientas predictivas para la planificación urbana y metodologías innovadoras para estudios similares."
         }
     ]
 }

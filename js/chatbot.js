@@ -36,7 +36,7 @@ async function loadCorpus() {
     }
 }
 
-// Sinónimos y términos relacionados (basado en tu diccionario Python)
+// Sinónimos y términos relacionados (basado en el diccionario del notebook)
 const terminos_ampliados = {
     // Términos relacionados con el proyecto
     "título": ["nombre", "denominación", "tema", "proyecto"],
@@ -70,24 +70,40 @@ const terminos_ampliados = {
     "ventajas": ["beneficios", "fortalezas", "puntos fuertes"],
     
     // Términos relacionados con conclusiones
-    "conclusiones": ["resultados", "hallazgos", "descubrimientos", "inferencias"]
+    "conclusiones": ["resultados", "hallazgos", "descubrimientos", "inferencias"],
+    
+    // Añadir términos específicos para participantes
+    "participantes": ["integrantes", "miembros", "colaboradores", "personas", "equipo", "autores", "investigadores"],
+    "equipo": ["grupo", "personal", "staff", "integrantes", "miembros", "participantes"]
 };
 
-// Preprocesamiento de texto (similar a LemNormalize y expandir_terminos)
-function preprocessText(text) {
-    // Convertir a minúsculas y eliminar caracteres especiales
-    let processed = text.toLowerCase().replace(/[^\w\s]/gi, '');
+// Función para expandir términos, similar a la del notebook
+function expandirTerminos(texto) {
+    // Convertir a minúsculas para comparación
+    let textoLower = texto.toLowerCase();
+    let textoExpandido = textoLower;
     
-    // Expansión de términos (similar a expandir_terminos)
-    let expanded = processed;
+    // Buscar términos clave en el texto
     Object.keys(terminos_ampliados).forEach(termino => {
-        if (processed.includes(termino)) {
-            const synonyms = terminos_ampliados[termino].join(' ');
-            expanded += ' ' + synonyms;
+        if (textoLower.includes(termino)) {
+            // Añadir términos relacionados al texto expandido
+            const terminosAdicionales = terminos_ampliados[termino].join(' ');
+            textoExpandido += ' ' + terminosAdicionales;
         }
     });
     
-    return expanded;
+    return textoExpandido;
+}
+
+// Preprocesamiento de texto mejorado con expansión de términos
+function preprocessText(text) {
+    // Convertir a minúsculas y eliminar caracteres especiales
+    let processed = text.toLowerCase().replace(/[^\w\sáéíóúüñ]/gi, '');
+    
+    // Expansión de términos
+    processed = expandirTerminos(processed);
+    
+    return processed;
 }
 
 // Tokenizar texto (similar a word_tokenize)
