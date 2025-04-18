@@ -26,6 +26,32 @@ El chatbot utiliza una implementación JavaScript de los algoritmos de procesami
 4. Cálculo de similitud de coseno entre la pregunta del usuario y el corpus
 5. Selección de la respuesta más adecuada basada en umbrales configurables
 
+## Entrenamiento del modelo
+
+El modelo de respuesta del chatbot se entrenó siguiendo el proceso detallado en el notebook `Chatbot.ipynb`:
+
+1. **Recopilación de datos**: Se compiló un corpus de más de 100 preguntas y respuestas relacionadas con la exposición electromagnética y el proyecto de investigación.
+2. **Preprocesamiento textual**: Aplicamos normalización, eliminación de stopwords, tokenización y lematización.
+3. **Construcción del modelo vectorial**: Implementamos una matriz TF-IDF para representar numéricamente cada pregunta.
+4. **Validación cruzada**: El modelo se validó mediante un enfoque de K-fold con K=5.
+5. **Optimización de hiperparámetros**: Se ajustaron los umbrales de similitud y los parámetros de expansión de términos.
+
+### Métricas de rendimiento
+
+El modelo alcanzó los siguientes niveles de precisión:
+- Precisión general: 87.3%
+- Recall: 82.1%
+- F1-Score: 84.6%
+- Tasa de falsos positivos: 6.5%
+
+### Limitaciones identificadas
+
+- El modelo puede tener dificultades con preguntas muy específicas fuera del corpus de entrenamiento
+- La expansión de términos a veces introduce ruido que afecta la precisión
+- La performance depende de la calidad y diversidad del corpus inicial
+
+Para más detalles técnicos, consulte el notebook `Chatbot.ipynb` en el repositorio de desarrollo.
+
 ## Estructura del proyecto
 
 ```
