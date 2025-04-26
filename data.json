@@ -1,6 +1,18 @@
 {
   "faq": [
     {
+      "question": "¿Quiénes participaron en el proyecto?",
+      "answer": "Participaron Andres Mauricio Ardila, Claudia Ines Giraldo, Marisela Lotero Zuluaga y como ejecutor técnico, la Ing. Darly Mildred Delgado."
+    },
+    {
+      "question": "participantes",
+      "answer": "Participaron Andres Mauricio Ardila, Claudia Ines Giraldo, Marisela Lotero Zuluaga y como ejecutor técnico, la Ing. Darly Mildred Delgado."
+    },
+    {
+      "question": "Participantes",
+      "answer": "Participaron Andres Mauricio Ardila, Claudia Ines Giraldo, Marisela Lotero Zuluaga y como ejecutor técnico, la Ing. Darly Mildred Delgado."
+    },
+    {
       "question": "¿Cuál es el título del proyecto?",
       "answer": "Identificación y predicción de Niveles de Exposición Electromagnética en Departamentos de Colombia."
     },
