@@ -5,7 +5,10 @@
 const config = {
     threshold: 0.28,
     mode: "adaptativo",
-    debugMode: false
+    debugMode: false,
+    useExternalLLM: true,  // Habilitar el uso de LLM externo
+    geminiAPIKey: "AIzaSyAel_ApU1CspuRaeqT0Z6jc0CblthtMlbE",  // Se debe configurar desde una variable de entorno o archivo seguro
+    geminiModel: "gemini-1.5-flash-latest"  // Modelo de Gemini a utilizar
 };
 
 // Cargar corpus de datos
@@ -74,7 +77,11 @@ const terminos_ampliados = {
     
     // Añadir términos específicos para participantes
     "participantes": ["integrantes", "miembros", "colaboradores", "personas", "equipo", "autores", "investigadores"],
-    "equipo": ["grupo", "personal", "staff", "integrantes", "miembros", "participantes"]
+    "equipo": ["grupo", "personal", "staff", "integrantes", "miembros", "participantes"],
+    "andres": ["mauricio", "ardila", "andres mauricio", "andres ardila", "mauricio ardila"],
+    "claudia": ["ines", "giraldo", "claudia ines", "claudia giraldo", "ines giraldo"],
+    "marisela": ["lotero", "zuluaga", "marisela lotero", "marisela zuluaga", "lotero zuluaga"],
+    "darly": ["mildred", "delgado", "darly mildred", "darly delgado", "mildred delgado"]
 };
 
 // Función para expandir términos, similar a la del notebook
@@ -151,7 +158,7 @@ function textToVector(text, allTexts) {
     return vector;
 }
 
-// Buscar la respuesta más similar (versión de buscar_respuesta_semantica)
+// Modificar función findBestResponse para retornar también la similitud
 function findBestResponse(userQuestion) {
     // Procesar la pregunta del usuario
     const processedQuestion = preprocessText(userQuestion);
@@ -178,40 +185,70 @@ function findBestResponse(userQuestion) {
     }
     
     if (maxSimilarity < config.threshold) {
-        return "Lo siento, no tengo una respuesta para esa pregunta. Por favor, intenta con otra consulta.";
+        return {
+            response: "Lo siento, no tengo una respuesta para esa pregunta. Por favor, intenta con otra consulta.",
+            similarity: maxSimilarity
+        };
     }
     
-    // Devolver la respuesta correspondiente
-    return answers[maxIndex];
+    // Devolver la respuesta correspondiente y su similitud
+    return {
+        response: answers[maxIndex],
+        similarity: maxSimilarity
+    };
 }
 
-// Función para saludos
-function greetingResponse(text) {
-    const greetings = ["hola", "buenas", "saludos", "qué tal", "hey", "buenos días", "ayuda"];
-    const greetingReplies = [
-        "Hola, ¿cómo puedo ayudarte?",
-        "Hola, ¿en qué puedo asistirte?",
-        "Hola, dime cómo puedo ayudarte."
-    ];
-    
-    for (const word of text.split(' ')) {
-        if (greetings.includes(word.toLowerCase())) {
-            return greetingReplies[Math.floor(Math.random() * greetingReplies.length)];
+// Función para consultar a Gemini API
+async function askExternalLLM(question) {
+    try {
+        // Verificar si hay una clave API configurada
+        if (!config.geminiAPIKey || config.geminiAPIKey === "") {
+            console.warn("API Key para Gemini no configurada");
+            return null;
         }
+        
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${config.geminiModel}:generateContent?key=${config.geminiAPIKey}`;
+        
+        const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                contents: [
+                    {
+                        role: "user",
+                        parts: [
+                            {
+                                text: "Eres un asistente virtual que proporciona respuestas breves y concisas a preguntas generales. Limita tus respuestas a 2-3 oraciones. Aquí está mi pregunta: " + question
+                            }
+                        ]
+                    }
+                ],
+                generationConfig: {
+                    temperature: 0.7,
+                    maxOutputTokens: 150,
+                    topP: 0.95
+                }
+            })
+        });
+        
+        const data = await response.json();
+        
+        // Manejar la respuesta de Gemini
+        if (data.candidates && data.candidates.length > 0 && 
+            data.candidates[0].content && 
+            data.candidates[0].content.parts && 
+            data.candidates[0].content.parts.length > 0) {
+            return data.candidates[0].content.parts[0].text.trim();
+        } else {
+            console.error("No se recibió una respuesta válida de la API de Gemini:", data);
+            return null;
+        }
+    } catch (error) {
+        console.error("Error al consultar la API de Gemini:", error);
+        return null;
     }
-    
-    return null;
-}
-
-// Función para despedidas
-function farewellResponse() {
-    const farewells = [
-        "Nos vemos, espero haberte ayudado.",
-        "Hasta pronto, ¡cuídate!",
-        "Chao, que tengas un buen día."
-    ];
-    
-    return farewells[Math.floor(Math.random() * farewells.length)];
 }
 
 // Función principal que maneja las respuestas del chatbot
@@ -239,7 +276,7 @@ async function getBotResponse(userInput) {
     
     // Verificar si es ayuda
     if (userText === 'ayuda') {
-        return "Puedes preguntarme sobre los participantes, objetivos, conclusiones, modelos, etc. Si quieres salir, escribe 'salir'.";
+        return "Puedes preguntarme sobre los participantes, objetivos, conclusiones, modelos, etc. También puedo responder preguntas generales si están dentro de mi conocimiento. Si quieres salir, escribe 'salir'.";
     }
     
     // Verificar si es un saludo
@@ -248,8 +285,24 @@ async function getBotResponse(userInput) {
         return greetingReply;
     }
     
-    // Buscar la mejor respuesta
-    return findBestResponse(userText);
+    // Buscar la mejor respuesta en nuestro corpus
+    const bestResponseResult = findBestResponse(userText);
+    const { response, similarity } = bestResponseResult;
+    
+    // Si la respuesta no supera el umbral y está habilitado el LLM externo, intentar usarlo
+    if (similarity < config.threshold && config.useExternalLLM) {
+        try {
+            const llmResponse = await askExternalLLM(userInput);
+            if (llmResponse) {
+                return llmResponse + "\n\n(Respuesta generada por Gemini)";
+            }
+        } catch (error) {
+            console.error("Error al usar el LLM externo:", error);
+        }
+    }
+    
+    // Si no hay respuesta del LLM o está desactivado, devolver respuesta normal o mensaje de error
+    return response;
 }
 
 document.addEventListener("DOMContentLoaded", function() {

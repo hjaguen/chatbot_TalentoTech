@@ -37,64 +37,32 @@
       "answer": "Participaron Andres Mauricio Ardila, Claudia Ines Giraldo, Marisela Lotero Zuluaga y como ejecutor técnico, la Ing. Darly Mildred Delgado."
     },
     {
-      "question": "¿Cuáles son los objetivos específicos del proyecto?",
-      "answer": "Configurar un entorno de trabajo eficiente, realizar un análisis exploratorio de datos, estructurar y limpiar los datos, desarrollar y evaluar modelos de Machine Learning, y diseñar una herramienta interactiva para presentar resultados."
+      "question": "¿Quién es Andres Mauricio Ardila?",
+      "answer": "Andres Mauricio Ardila es uno de los desarrolladores principales del proyecto, especialista en análisis de datos y Machine Learning. Fue responsable del desarrollo del modelo predictivo y la implementación del chatbot."
     },
     {
-      "question": "¿Qué modelos de Machine Learning se usaron en el proyecto?",
-      "answer": "Se usaron Regresión Lineal, Árboles de Decisión, Random Forest y XGBoost, optimizados con técnicas como GridSearchCV."
+      "question": "¿Quién es Claudia Ines Giraldo?",
+      "answer": "Claudia Ines Giraldo es experta en análisis estadístico e investigación de campo. En el proyecto, se encargó del análisis exploratorio de datos y la validación de los resultados obtenidos."
     },
     {
-      "question": "¿Cómo se evaluaron los modelos de Machine Learning?",
-      "answer": "Se utilizaron métricas como el Error Cuadrático Medio (MSE) y el Coeficiente de Determinación (R²). El modelo XGBoost optimizado obtuvo un R² de 0.9158 en entrenamiento y 0.7845 en prueba, destacándose como el mejor modelo."
+      "question": "¿Quién es Marisela Lotero Zuluaga?",
+      "answer": "Marisela Lotero Zuluaga es especialista en visualización de datos y diseño de interfaces. Fue responsable del desarrollo de la interfaz web y la presentación visual de los resultados del proyecto."
     },
     {
-      "question": "¿Cuál es la pregunta principal del proyecto?",
-      "answer": "¿Es posible predecir la fluctuación de los niveles de exposición electromagnética en diferentes regiones de Colombia utilizando técnicas de Machine Learning?"
+      "question": "¿Quién es Darly Mildred Delgado?",
+      "answer": "La Ing. Darly Mildred Delgado fue la ejecutora técnica del proyecto, proporcionando orientación experta y supervisión técnica durante todo el desarrollo del mismo."
     },
     {
-      "question": "¿Qué variables se consideraron en el proyecto?",
-      "answer": "Se consideraron variables ambientales, geográficas y temporales, además de datos abiertos sobre fuentes emisoras de radiación electromagnética."
+      "question": "¿Cuál fue el rol de Andres Mauricio Ardila en el proyecto?",
+      "answer": "Andres Mauricio Ardila fue responsable del diseño e implementación de los modelos de Machine Learning, incluyendo la selección de algoritmos, entrenamiento y evaluación de los modelos predictivos."
     },
     {
-      "question": "¿Qué información técnica se utilizó en el proyecto?",
-      "answer": "Se aplicaron técnicas como codificación de variables categóricas (OneHotEncoder), normalización, escalado, análisis univariado, bivariado y multivariado, y reducción de dimensionalidad (PCA)."
+      "question": "¿Cuál fue el rol de Claudia Ines Giraldo en el proyecto?",
+      "answer": "Claudia Ines Giraldo lideró la fase de análisis exploratorio de datos, desarrollando metodologías para la limpieza de datos y estableciendo los criterios de evaluación para los modelos predictivos."
     },
     {
-      "question": "¿Cuál es el título del proyecto?",
-      "answer": "Predicción de niveles de exposición electromagnética en Colombia utilizando técnicas de Machine Learning."
-    },
-    {
-      "question": "¿Cuáles son los objetivos del proyecto?",
-      "answer": "El objetivo general es ilustrar las primeras fases del ciclo de vida de un modelo de Machine Learning aplicado a la predicción de niveles de exposición electromagnética en municipios de Colombia."
-    },
-    {
-      "question": "¿Qué es la exposición electromagnética?",
-      "answer": "Es la exposición a campos electromagnéticos generados por dispositivos electrónicos, redes de telecomunicaciones y otras fuentes, que pueden tener impacto en la salud y el medio ambiente."
-    },
-    {
-      "question": "¿Qué modelos de Machine Learning se usaron?",
-      "answer": "Se usaron modelos como Regresión Lineal, Árboles de Decisión, Random Forest y XGBoost, optimizados con técnicas como GridSearchCV."
-    },
-    {
-      "question": "¿Dónde puedo encontrar más información sobre los datos utilizados?",
-      "answer": "Los datos provienen de fuentes abiertas del gobierno colombiano, disponibles en https://www.datos.gov.co."
-    },
-    {
-      "question": "¿Cuál es el planteamiento del problema abordado?",
-      "answer": "El problema radica en la falta de un modelo predictivo eficiente que permita analizar y anticipar los niveles de exposición a campos electromagnéticos en función de variables ambientales, geográficas y temporales."
-    },
-    {
-      "question": "¿Cuáles son los beneficios de este proyecto?",
-      "answer": "Optimización del análisis de datos, mejora en la toma de decisiones, accesibilidad a la información, reducción de costos y aplicación de tecnología en la gestión ambiental."
-    },
-    {
-      "question": "¿Qué conclusiones se obtuvieron del proyecto?",
-      "answer": "Se demostró que es posible predecir la fluctuación de los niveles de exposición electromagnética en Colombia utilizando técnicas de Machine Learning. El modelo XGBoost optimizado fue el más destacado, y se recomienda ampliar la base de datos para mejorar la capacidad predictiva."
-    },
-    {
-      "question": "¿Quiénes participaron en el proyecto?",
-      "answer": "Participaron Andres Mauricio Ardila, Claudia Ines Giraldo, Marisela Lotero Zuluaga y como ejecutor técnico, la Ing. Darly Mildred Delgado."
+      "question": "¿Cuál fue el rol de Marisela Lotero Zuluaga en el proyecto?",
+      "answer": "Marisela Lotero Zuluaga se encargó del diseño de la interfaz de usuario, visualización de datos y la presentación de resultados, asegurando que la información fuera accesible y comprensible."
     },
     {
       "question": "¿Cuáles son los objetivos específicos del proyecto?",
