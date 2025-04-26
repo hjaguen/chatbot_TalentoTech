@@ -348,6 +348,35 @@ async function askExternalLLM(question) {
     }
 }
 
+// Función para saludos
+function greetingResponse(text) {
+    const greetings = ["hola", "buenas", "saludos", "qué tal", "hey", "buenos días", "buenas tardes", "buenas noches"];
+    const greetingReplies = [
+        "Hola, ¿cómo puedo ayudarte?",
+        "Hola, ¿en qué puedo asistirte?",
+        "Hola, dime cómo puedo ayudarte."
+    ];
+    
+    for (const word of text.split(' ')) {
+        if (greetings.includes(word.toLowerCase())) {
+            return greetingReplies[Math.floor(Math.random() * greetingReplies.length)];
+        }
+    }
+    
+    return null;
+}
+
+// Función para despedidas
+function farewellResponse() {
+    const farewells = [
+        "Nos vemos, espero haberte ayudado.",
+        "Hasta pronto, ¡cuídate!",
+        "Chao, que tengas un buen día."
+    ];
+    
+    return farewells[Math.floor(Math.random() * farewells.length)];
+}
+
 // Función principal que maneja las respuestas del chatbot
 async function getBotResponse(userInput) {
     // Asegurarse de que el corpus esté cargado
