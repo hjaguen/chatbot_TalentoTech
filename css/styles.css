@@ -94,7 +94,7 @@ h1 {
   font-weight: 500;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .chatbot-header img {
@@ -130,11 +130,14 @@ h1 {
   border-bottom-right-radius: 0.2rem;
 }
 
+/* Ajustes para mejorar la interfaz de usuario */
 .chat-input-container {
   display: flex;
   padding: 1rem;
   background-color: white;
   border-top: 1px solid #e0e0e0;
+  align-items: center; /* Alinear verticalmente los elementos */
+  flex-wrap: nowrap; /* Evitar que los elementos se envuelvan en móviles */
 }
 
 #user-input {
@@ -144,6 +147,7 @@ h1 {
   border-radius: 20px;
   outline: none;
   font-size: 1rem;
+  min-width: 0; /* Permite que el input se encoja si es necesario */
 }
 
 #user-input:focus {
@@ -161,6 +165,7 @@ h1 {
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.2s;
+  white-space: nowrap; /* Impedir que el texto del botón se envuelva */
 }
 
 #chat-button:hover {
@@ -171,7 +176,7 @@ h1 {
   transform: translateY(1px);
 }
 
-/* Estilos para el botón de micrófono */
+/* Estilos mejorados para el botón de micrófono */
 #mic-button {
     background-color: #4285f4;
     color: white;
@@ -179,12 +184,14 @@ h1 {
     border-radius: 50%;
     width: 40px;
     height: 40px;
+    margin-left: 10px;
     margin-right: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0; /* Evitar que el botón de micrófono se encoja */
 }
 
 #mic-button:hover {
@@ -194,6 +201,11 @@ h1 {
 #mic-button.listening {
     background-color: #ea4335;
     animation: pulse 1.5s infinite;
+}
+
+/* Icono de micrófono personalizado */
+#mic-button i {
+    font-size: 1.2rem;
 }
 
 @keyframes pulse {
@@ -234,6 +246,167 @@ h1 {
   to { transform: rotate(360deg); }
 }
 
+/* Estilos para el modal de configuración */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3d5c8c;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.mt-3 {
+    margin-top: 15px;
+}
+
+#settings-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#settings-button:hover {
+    color: #f0f0f0;
+}
+
+#api-test-result {
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#api-test-result.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#api-test-result.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Estilo para el contenedor de la contraseña */
+.password-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.password-container input {
+    flex-grow: 1;
+    padding-right: 40px; /* Espacio para el botón de mostrar/ocultar */
+}
+
+#toggle-password {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+    color: #666;
+}
+
+#toggle-password:hover {
+    color: #333;
+}
+
+/* Responsive design mejorado */
 @media (max-width: 768px) {
   .chatbot-container, .project-info {
     margin: 1rem;
@@ -246,5 +419,43 @@ h1 {
   
   .message {
     max-width: 90%;
+  }
+  
+  /* Ajustes específicos para móviles */
+  .chat-input-container {
+    padding: 0.75rem;
+  }
+  
+  #user-input {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+  }
+  
+  #chat-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    min-width: 60px; /* Ancho mínimo para el botón de enviar */
+  }
+  
+  #mic-button {
+    width: 36px;
+    height: 36px;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+/* Media query para móviles muy pequeños */
+@media (max-width: 360px) {
+  #chat-button {
+    padding: 0.6rem;
+    min-width: 50px;
+  }
+  
+  #mic-button {
+    width: 32px;
+    height: 32px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }

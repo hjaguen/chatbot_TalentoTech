@@ -1,0 +1,19 @@
+# Ignorar archivos de configuración con claves API
+js/config.js
+
+# Ignorar archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos temporales y de caché
+*.tmp
+*.temp
+*.log
+__pycache__/
+.cache/
+
+# Ignorar archivos específicos de IDE y editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
