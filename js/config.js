@@ -2,5 +2,5 @@
 // IMPORTANTE: Este archivo no debe incluirse en el control de versiones (añádelo a .gitignore)
 
 const API_CONFIG = {
-    geminiApiKey: "AIzaSyAel_ApU1CspuRaeqT0Z6jc0CblthtMlbE" // Reemplaza esto con tu clave API real
+    geminiApiKey: "" // Reemplaza esto con tu clave API real
 };
