@@ -448,6 +448,17 @@ async function getBotResponse(userInput) {
     return response;
 }
 
+// Función para ocultar parcialmente un texto, mostrando solo algunos caracteres
+function partiallyMaskText(text, visibleStart = 4, visibleEnd = 4) {
+    if (!text || text.length < 8) return text; // Si es muy corta, no aplicar máscara
+    
+    const start = text.substring(0, visibleStart);
+    const middle = text.substring(visibleStart, text.length - visibleEnd).replace(/./g, '*');
+    const end = text.substring(text.length - visibleEnd);
+    
+    return start + middle + end;
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const userInputField = document.getElementById("user-input");
     const chatButton = document.getElementById("chat-button");
@@ -463,6 +474,58 @@ document.addEventListener("DOMContentLoaded", function() {
     const saveApiSettings = document.getElementById("save-api-settings");
     const testApiConnection = document.getElementById("test-api-connection");
     const apiTestResult = document.getElementById("api-test-result");
+    const togglePasswordButton = document.getElementById("toggle-password");
+    
+    // Variables para controlar el estado de visualización de la clave API
+    let apiKeyFullyVisible = false;
+    let originalApiKeyValue = '';
+    
+    // Funcionalidad para mostrar/ocultar la clave API
+    if (togglePasswordButton) {
+        togglePasswordButton.addEventListener("click", function() {
+            if (apiKeyInput.type === "password") {
+                // Guardar el valor original antes de mostrarlo parcialmente
+                originalApiKeyValue = apiKeyInput.value;
+                
+                // Cambiar a tipo texto y mostrar parcialmente la clave
+                apiKeyInput.type = "text";
+                if (!apiKeyFullyVisible) {
+                    apiKeyInput.value = partiallyMaskText(originalApiKeyValue, 5, 5);
+                }
+                
+                togglePasswordButton.innerHTML = '<i class="fas fa-eye-slash"></i>';
+                togglePasswordButton.title = apiKeyFullyVisible ? "Mostrar parcialmente" : "Mostrar completamente";
+            } else {
+                if (!apiKeyFullyVisible) {
+                    // Si estaba parcialmente visible, ahora mostrar completamente
+                    apiKeyInput.value = originalApiKeyValue;
+                    apiKeyFullyVisible = true;
+                    togglePasswordButton.title = "Ocultar clave";
+                } else {
+                    // Si estaba completamente visible, volver a ocultar
+                    apiKeyInput.type = "password";
+                    apiKeyInput.value = originalApiKeyValue; // Restaurar valor original
+                    apiKeyFullyVisible = false;
+                    togglePasswordButton.innerHTML = '<i class="fas fa-eye"></i>';
+                    togglePasswordButton.title = "Mostrar parcialmente";
+                }
+            }
+        });
+        
+        // Al enfocar el campo, mostrar siempre el valor completo
+        apiKeyInput.addEventListener("focus", function() {
+            if (apiKeyInput.type === "text" && !apiKeyFullyVisible) {
+                apiKeyInput.value = originalApiKeyValue;
+            }
+        });
+        
+        // Al perder el foco, volver a la visualización parcial si está en modo texto
+        apiKeyInput.addEventListener("blur", function() {
+            if (apiKeyInput.type === "text" && !apiKeyFullyVisible) {
+                apiKeyInput.value = partiallyMaskText(originalApiKeyValue, 5, 5);
+            }
+        });
+    }
     
     // Cargar configuración guardada al inicio
     if (localStorage.getItem('gemini_api_key')) {

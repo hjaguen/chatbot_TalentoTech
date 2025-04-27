@@ -378,6 +378,34 @@ h1 {
     border: 1px solid #f5c6cb;
 }
 
+/* Estilo para el contenedor de la contraseña */
+.password-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.password-container input {
+    flex-grow: 1;
+    padding-right: 40px; /* Espacio para el botón de mostrar/ocultar */
+}
+
+#toggle-password {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+    color: #666;
+}
+
+#toggle-password:hover {
+    color: #333;
+}
+
 /* Responsive design mejorado */
 @media (max-width: 768px) {
   .chatbot-container, .project-info {
